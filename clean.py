@@ -1,4 +1,4 @@
-def word_counts(data):
+def char_counts(data):
 	split_tweets = [i.split() for i in data.text]
 	word_number = [len(i) for i in split_tweets]
 	word_lengths = [[len(j) for j in i] for i in split_tweets]
@@ -8,7 +8,7 @@ def word_counts(data):
 	std_word_length = [np.std(i) for i in word_lengths]
     
 	counts = features = pd.DataFrame(np.array([mean_word_length,max_word_length,min_word_length,std_word_length]).T,
-             columns=["Mean","Min","Max","Std"])
+             columns=["Char Mean","Char Min","Char Max","Char Std"])
     
 	return(counts)
 
