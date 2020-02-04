@@ -21,3 +21,8 @@ Function should return a data frame with the following features
 |cleaned text|locations|key words|hashtags|hashtag count|url count|All Caps|Uncommon Words|
 |-|-|-|-|-|-|-|-|
 |string|string|string|string|int|int|binary|string|
+
+
+### Build Model:
+
+Model should act as RNN/BERT on cleaned text, RNN/BERT on the Uncommon Words, and classifier on other data. 
