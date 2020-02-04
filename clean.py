@@ -1,13 +1,5 @@
-def clean_tweets(data):
-    print("Lets clean some tweets")
-    # Clean Some Tweests
-    clean_data = data
-  
-    return(clean_data)
-
-
 def word_counts(data):
-    split_tweets = [i.split() for i in data.text]
+	split_tweets = [i.split() for i in data.text]
     word_number = [len(i) for i in split_tweets]
     word_lengths = [[len(j) for j in i] for i in split_tweets]
     mean_word_length = [np.mean(i) for i in word_lengths]
@@ -19,3 +11,10 @@ def word_counts(data):
              columns=["Mean","Min","Max","Std"])
     
     return(counts)
+
+def clean_tweets(data):
+    print("Lets clean some tweets")
+    # Clean Some Tweests
+    clean_data = data
+  
+    return(clean_data)
