@@ -7,7 +7,7 @@ def char_counts(data):
 	min_word_length = [np.min(i) for i in word_lengths]
 	std_word_length = [np.std(i) for i in word_lengths]
     
-	counts = features = pd.DataFrame(np.array([mean_word_length,max_word_length,min_word_length,std_word_length]).T,
+	counts =  pd.DataFrame(np.array([mean_word_length,max_word_length,min_word_length,std_word_length]).T,
              columns=["Char Mean","Char Min","Char Max","Char Std"])
     
 	return(counts)
