@@ -3,7 +3,7 @@ Natural Langauge Processing using Disaster Tweets
 
 To load the cleaning functions into a Jupyter notebook, drop the following line into the notebook:
 
-%load https://raw.githubusercontent.com/tipthederiver/MLClubNLP/master/clean.py
+`%load https://raw.githubusercontent.com/tipthederiver/MLClubNLP/master/clean.py`
 
 
 ## To Do:
