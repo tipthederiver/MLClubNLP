@@ -15,13 +15,13 @@ Build a function that takes training or test data and:
 
 |Task|Creator|Delegate|Status|
 |-|-|-|-|
-|Convert to lowercase|-|-|-|
-|Remove punctutaion, replace with blank space|-|-|-|
-|Find/implament a word standardization list (eg "Standard Deviation" to "std")|-|-|-|
-|Run spell checker|-|-|-|
+|Convert to lowercase|-|Zheying|-|
+|Remove punctutaion, replace with blank space|-|Zheying|-|
+|Find/implament a word standardization list (eg "Standard Deviation" to "std")|-|Shuo|-|
+|Run spell checker|-|Nate|-|
 |Create list of hashtags, add to training, add feature with hashtag count|-|Nate|Done|
-|Remove @names|-|-|-|
-|Remove URL's but note they are there|-|-|-|
+|Remove @names|-|Zheying|-|
+|Remove URL's but note they are there|-|Ruobing|-|
 |Clearn the those location values that are not real locations|Zheying|-|-|
 
 Function should return a data frame with the following features
