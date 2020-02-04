@@ -13,19 +13,19 @@ def char_counts(data):
 	return(counts)
 
 def find_hash(data):
-    # Expects a dataframe with a .text column containing the tweets
-    # Find hash returns a dataframe with two columns, one for each tweet:: 
-    # Hashtags - a string containing the hashtags seperated by spaces
-    # Hashcount - the number of hashtags in the tweet
+	# Expects a dataframe with a .text column containing the tweets
+	# Find hash returns a dataframe with two columns, one for each tweet:: 
+	# Hashtags - a string containing the hashtags seperated by spaces
+	# Hashcount - the number of hashtags in the tweet
     
-    hashtags = [re.findall(r"#(\w+)", i) for i in data.text]
-    hashstring = [' '.join(i) for i in hashtags]
-    num_hashtags = [len(i) for i in hashtags]
+	hashtags = [re.findall(r"#(\w+)", i) for i in data.text]
+	hashstring = [' '.join(i) for i in hashtags]
+	num_hashtags = [len(i) for i in hashtags]
     
-    hash_dict = {"Hashtags": hashstring, "Hashcount": num_hashtags}
-    hashinfo = pd.DataFrame(hash_dict)
+	hash_dict = {"Hashtags": hashstring, "Hashcount": num_hashtags}
+	hashinfo = pd.DataFrame(hash_dict)
     
-    return(hashinfo)
+	return(hashinfo)
 
 def clean_tweets(data):
 	print("Lets clean some tweets")
