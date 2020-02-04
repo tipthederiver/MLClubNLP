@@ -17,3 +17,7 @@ Build a function that takes training or test data and:
 * Remove URL's but note they are there
 
 Function should return a data frame with the following features
+
+|cleaned text|locations|key words|hashtags|hashtag count|url count|All Caps|Uncommon Words|
+|-|-|-|-|-|-|-|-|
+|string|string|string|string|int|int|binary|string|
