@@ -12,14 +12,17 @@ To load the cleaning functions into a Jupyter notebook, drop the following line 
 
 Build a function that takes training or test data and:
 
-* Convert to lowercase 
-* Remove punctutaion, replace with blank space
-* Find/implament a word standardization list (eg "Standard Deviation" to "std")
-* Run spell checker
-* Create list of hashtags, add to training, add feature with hashtag count
-* Remove @names
-* Remove URL's but note they are there
-* CLearn the those location values that are not real locations -Zheying 
+
+|Task|Creator|Delegate|Status|
+|-|-|-|-|
+|Convert to lowercase|-|-|-|
+|Remove punctutaion, replace with blank space|-|-|-|
+|Find/implament a word standardization list (eg "Standard Deviation" to "std")|-|-|-|
+|Run spell checker|-|-|-|
+|Create list of hashtags, add to training, add feature with hashtag count|-|-|-|
+|Remove @names|-|-|-|
+|Remove URL's but note they are there|-|-|-|
+|CLearn the those location values that are not real locations|Zheying|-|-|
 
 Function should return a data frame with the following features
 
