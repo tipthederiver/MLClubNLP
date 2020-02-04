@@ -22,7 +22,7 @@ Build a function that takes training or test data and:
 |Create list of hashtags, add to training, add feature with hashtag count|-|-|-|
 |Remove @names|-|-|-|
 |Remove URL's but note they are there|-|-|-|
-|CLearn the those location values that are not real locations|Zheying|-|-|
+|Clearn the those location values that are not real locations|Zheying|-|-|
 
 Function should return a data frame with the following features
 
