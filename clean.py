@@ -12,6 +12,11 @@ def char_counts(data):
     
 	return(counts)
 
+def find_hash(data):
+	hashtags = [re.findall(r"#(\w+)", i) for i in data.text]
+	num_hashtags = [len(i) for i in hashtags]
+	return(num_hashtags
+
 def clean_tweets(data):
 	print("Lets clean some tweets")
 	# Clean Some Tweests
