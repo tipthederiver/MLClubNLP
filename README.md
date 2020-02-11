@@ -28,12 +28,13 @@ Build a function that takes training or test data and:
 |Construct unique word feature, listing only words not in 1000 most common words|Nate|-|Done|
 |Remove Emojis|Zheying|-|-|
 |Remove all charaters that are not english|All|-|-|
+|Number of misspelled words| Juan |-|-|
 
 Function should return a data frame with the following features
 
-|cleaned text|locations|key words|hashtags|hashtag count|url count|All Caps|Uncommon Words|
-|-|-|-|-|-|-|-|-|
-|string|string|string|string|int|int|binary|string|
+|cleaned text|locations|key words|hashtags|hashtag count|url count|All Caps|Uncommon Words|Number of Mispelled|
+|-|-|-|-|-|-|-|-|-|
+|string|string|string|string|int|int|binary|string|number|
 
 
 ### Build Model:
