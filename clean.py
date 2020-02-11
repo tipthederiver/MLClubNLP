@@ -49,6 +49,64 @@ def find_hash(data):
     
 	return(hashinfo)
 
+#lower string
+def lowercase(data):
+    data = str.lower(data)
+    return data 
+
+#remove punctuation
+def no_punctuation(data):
+    punc = '''!()-[]{};:'"\,<>./?$%^&*_~''' #We don't remove @ or # yet 
+    no_punc=''
+    for char in data:
+        if char in punc:
+            data = data.replace(char, ' ')
+    return data 
+            
+
+#remove @name
+def no_name(data):
+    words = data.split()
+    for word in words:
+        if '@' in word:
+            words.remove(word)
+    return ' '.join(words)
+
+
+#remove numbers
+def no_number(data):
+    words = data.split()
+    for word in words:
+        if word.isdigit():
+            words.remove(word)
+    return ' '.join(words)
+
+
+
+#remove emoji
+import re
+def no_emoji(data):
+    emoji_pattern = re.compile("["
+        u"\U0001F600-\U0001F64F"  # emoticons
+        u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+        u"\U0001F680-\U0001F6FF"  # transport & map symbols
+        u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+                           "]+", flags=re.UNICODE)
+    return emoji_pattern.sub(r'', data)
+
+
+
+import re
+def remove_url(data):
+    result = re.sub(r"http\S+", "", data)
+    
+    return result
+remove_url("this is just a test.http://www.sthda.com/english/wiki/ggplot2-line-plot-quick-start-guide-r-software-and-data-visualization") 
+
+
+
+
+
 def clean_tweets(data):
 	print("Lets clean some tweets")
 	# Clean Some Tweests
