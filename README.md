@@ -1,6 +1,8 @@
 # MLClubNLP
 Natural Langauge Processing using Disaster Tweets
 
+https://www.kaggle.com/c/nlp-getting-started/data
+
 To load the cleaning functions into a Jupyter notebook, drop the following line into the notebook:
 
 `%load https://raw.githubusercontent.com/tipthederiver/MLClubNLP/master/clean.py`
