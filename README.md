@@ -23,7 +23,7 @@ Build a function that takes training or test data and:
 |Remove @names|-|Zheying|-|
 |Remove URL's but note they are there|-|Ruobing|-|
 |Clean the those location values that are not real locations|Zheying|-|-|
-|Construct unique word feature, listing only words not in 1000 most common words|Nate|-|-|
+|Construct unique word feature, listing only words not in 1000 most common words|Nate|-|Done|
 |Remove Emojis|Zheying|-|-|
 |Remove all charaters that are not english|All|-|-|
 
