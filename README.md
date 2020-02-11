@@ -40,3 +40,16 @@ Function should return a data frame with the following features
 ### Build Model:
 
 Model should act as RNN/BERT on cleaned text, RNN/BERT on the Uncommon Words, and classifier on other data. 
+http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+
+Text Generation with RNN's
+https://machinelearningmastery.com/develop-character-based-neural-language-model-keras/
+
+Encodings: 
+
+|Encodings Type|Classifier|Creator|Delegate|Status|
+|-|-|-|-|-|
+|Bag of words | Deep NN| Juan | - |-|
+|Tokenization | Word Level RNN| Nate|-|-|
+|One Hot Encodings| Character Level RNN | Zheying | -| -|
+|One Hot Encodings| Character Level CNN | Nate | - | - |
