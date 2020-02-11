@@ -21,13 +21,11 @@ def uncommon(data, common_words):
     sc = set(common_words)
     for i in data:
         uw = []
-        i = i.translate(str.maketrans('', '', string.punctuation))
-        i=i.lower()
         for n in i.split():
             if(n not in sc):
                 uw = uw + [n]
 
-        uncommon_words = uncommon_words + [uw]
+        uncommon_words = uncommon_words + [' '.join(uw)]
        
     return(uncommon_words)
 
@@ -126,13 +124,14 @@ def clean_tweets(data):
     # Clean Some Tweests
     hashdata = find_hash(data.text)
     urldata = parse_url(data.text)
-    
-    uwords = uncommon(urldata['No Urls'],common_words)
+
     cleaned = clean_string(urldata['No Urls'])
+    uwords = uncommon(cleaned,common_words.split('\n'))
     
     clean_data = {"Cleaned": cleaned, 
                   "URLcount": urldata["URLcount"],
                   "Hashtags": hashdata["Hashtags"],
-                  "Hashcount": hashdata["Hashcount"]}
+                  "Hashcount": hashdata["Hashcount"],
+                  "Uncommon": uwords}
   
     return(pd.DataFrame(clean_data))
