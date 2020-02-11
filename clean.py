@@ -12,6 +12,28 @@ def char_counts(data):
     
 	return(counts)
 
+import string
+
+common_words = open("1000CWs.txt", encoding="utf8").read()
+
+def uncommon(data, common_words):
+    uncommon_words = []
+    sc = set(common_words)
+    for i in data.text:
+        uw = []
+        i = i.translate(str.maketrans('', '', string.punctuation))
+        i=i.lower()
+        for n in i.split():
+            if(n not in sc):
+                uw = uw + [n]
+
+        uncommon_words = uncommon_words + [uw]
+       
+    return(uncommon_words)
+
+
+# Usage: uncommon(data, common_words) where the common_words file can be downloaded from the git hub. 
+
 def find_hash(data):
 	# Expects a dataframe with a .text column containing the tweets
 	# Find hash returns a dataframe with two columns, one for each tweet:: 
