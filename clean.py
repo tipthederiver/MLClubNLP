@@ -1,5 +1,5 @@
 def char_counts(data):
-	split_tweets = [i.split() for i in data.text]
+	split_tweets = [i.split() for i in data]
 	word_number = [len(i) for i in split_tweets]
 	word_lengths = [[len(j) for j in i] for i in split_tweets]
 	mean_word_length = [np.mean(i) for i in word_lengths]
@@ -19,7 +19,7 @@ common_words = open("1000CWs.txt", encoding="utf8").read()
 def uncommon(data, common_words):
     uncommon_words = []
     sc = set(common_words)
-    for i in data.text:
+    for i in data:
         uw = []
         i = i.translate(str.maketrans('', '', string.punctuation))
         i=i.lower()
@@ -40,7 +40,7 @@ def find_hash(data):
 	# Hashtags - a string containing the hashtags seperated by spaces
 	# Hashcount - the number of hashtags in the tweet
     
-	hashtags = [re.findall(r"#(\w+)", i) for i in data.text]
+	hashtags = [re.findall(r"#(\w+)", i) for i in data]
 	hashstring = [' '.join(i) for i in hashtags]
 	num_hashtags = [len(i) for i in hashtags]
     
@@ -106,10 +106,33 @@ remove_url("this is just a test.http://www.sthda.com/english/wiki/ggplot2-line-p
 
 
 
+def clean_string(data):
+    return(data.apply(lambda x: no_emoji(no_number(no_name(no_punctuation(lowercase(x)))))))
+
+def parse_url(data):
+    noUrl = data.apply(lambda x: remove_url(x))
+    urls = [re.findall(r"http\S+", i) for i in data]
+    num_urls = [len(i) for i in urls]
+    
+    url_dict = {"No Urls": noUrl, "URLcount": num_urls}
+    urlinfo = pd.DataFrame(url_dict)
+    
+    return(urlinfo)
+
+
 
 def clean_tweets(data):
-	print("Lets clean some tweets")
-	# Clean Some Tweests
-	clean_data = data
+    print("Lets clean some tweets")
+    # Clean Some Tweests
+    hashdata = find_hash(data.text)
+    urldata = parse_url(data.text)
+    
+    uwords = uncommon(urldata['No Urls'],common_words)
+    cleaned = clean_string(urldata['No Urls'])
+    
+    clean_data = {"Cleaned": cleaned, 
+                  "URLcount": urldata["URLcount"],
+                  "Hashtags": hashdata["Hashtags"],
+                  "Hashcount": hashdata["Hashcount"]}
   
-	return(clean_data)
+    return(pd.DataFrame(clean_data))
